@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Battery</title>
+    <title>TickMark</title>
     <!-- bootstrap cdn here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -10,10 +10,10 @@
 
 <body>
 
-    <h1 class="text-center"><span class="text-danger">B</span>attery <span class="text-danger">E</span>xperiment</h1>
+    <h1 class="text-center"><span class="text-danger">T</span>ickMark <span class="text-danger">E</span>xperiment</h1>
 
     <div class="container text-center mt-5">
-        <img src="img/Battery.png" height="112px" width="160px" alt="Battery Image">
+        <img src="img/Tick-Mark-Frame.png" height="112px" width="160px" alt="TickMark">
     </div>
 
 
@@ -31,11 +31,11 @@
                 if ((100 - green_percent) <= 50) {
                     var color1 = "green " + green_percent + "%";
                     var color2 = "red " + (100 - green_percent) + "%";
-                    var str = "linear-gradient(to right," + color1 + "," + color2 + ")";
+                    var str = "linear-gradient(to left," + color1 + "," + color2 + ")";
                 } else {
                     var color1 = "red " + (100 - green_percent) + "%";
                     var color2 = "green " + green_percent + "%";
-                    var str = "linear-gradient(to left," + color1 + "," + color2 + ")";
+                    var str = "linear-gradient(to right," + color1 + "," + color2 + ")";
                 }
                 $("img").css("background", str);
                 also_have_in_sec = also_have_in_sec - 1;
