@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #FAFAFC 0% 0% no-repeat;
+    box-sizing: border-box;
+}
+
+.battery-image {
+    /* background-color: green; */
+    background: linear-gradient(to right, green 50%, red 50%);
+}
+
+.image-showcase {
+    height: 112px;
+    width: 160px;
+}
