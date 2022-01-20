@@ -13,32 +13,37 @@
     <h1 class="text-center"><span class="text-danger">B</span>attery <span class="text-danger">E</span>xperiment</h1>
 
     <div class="container text-center mt-5">
-        <img class="battery-image" src="img/Battery.png" height="112px" width="160px" alt="Battery Image">
+        <img src="img/Battery.png" height="112px" width="160px" alt="Battery Image">
     </div>
+
+
+    <!-- jquery here -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <!-- bootstrap cdn here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script>
-        $("#btn_color").on('click', function() {
-            var color = $("#color").val();
-            var color2 = $("#color2").val();
-            var str = "linear-gradient(" + color + "," + color2 + ")";
-            $("body").css("background", str);
-        })
-
-
-        var t = 60;
+        var total_time_in_sec = 3600
+        var already_passed_in_sec = 2880;
         setInterval(() => {
-            if (t > 1) {
+            if (already_passed_in_sec > 1) {
+                var green_percent = Math.round(already_passed_in_sec / total_time_in_sec * 100);
 
-                $('.left-time').html(t);
-                t = t - 1;
-
+                if ((100 - green_percent) <= 50) {
+                    var color1 = "green " + green_percent + "%";
+                    var color2 = "red " + (100 - green_percent) + "%";
+                    var str = "linear-gradient(to right," + color1 + "," + color2 + ")";
+                } else {
+                    var color1 = "red " + (100 - green_percent) + "%";
+                    var color2 = "green " + green_percent + "%";
+                    var str = "linear-gradient(to left," + color1 + "," + color2 + ")";
+                }
+                $("img").css("background", str);
+                already_passed_in_sec = already_passed_in_sec - 1;
             } else {
                 clearInterval();
-                var color = ''
-                green 100 % ";
-                var color2 = "red 100 % ";
+                $("img").css("background", "red");
             }
+            console.log(green_percent);
         }, 1000);
     </script>
 </body>

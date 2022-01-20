@@ -8,11 +8,6 @@ body {
     box-sizing: border-box;
 }
 
-.battery-image {
-    /* background-color: green; */
-    background: linear-gradient(to right, green 50%, red 50%);
-}
-
 .image-showcase {
     height: 112px;
     width: 160px;
